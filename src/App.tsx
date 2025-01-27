@@ -4,6 +4,7 @@ import { Counter } from "./tasks/Counter";
 import { Todo } from "./tasks/Todo";
 import { Link } from "react-router";
 import PostsView from "./tasks/PostsTable";
+import { MirrorInput } from "./tasks/MirrorInput";
 
 const App = () => {
   return (
@@ -30,6 +31,11 @@ const App = () => {
               Posts
             </Link>
           </li>
+          <li>
+            <Link className="text-white hover:text-gray-400" to="/mirror">
+              Mirror
+            </Link>
+          </li>
         </ul>
       </nav>
       <div className="pt-16">
@@ -38,6 +44,7 @@ const App = () => {
           <Route path="/counter" element={<Counter />} />
           <Route path="/todo" element={<Todo />} />
           <Route path="/posts" element={<PostsView />} />
+          <Route path="/mirror" element={<MirrorInput />} />
         </Routes>
       </div>
     </>

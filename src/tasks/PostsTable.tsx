@@ -1,11 +1,3 @@
-// 1. Pobierz dane z API (GET) pod adresem:
-//  https://jsonplaceholder.typicode.com/posts
-// 2. Wyświetl dane w tabeli (PostsView) w komponencie PostsView
-
-// TRUDNIEJSZA CZĘŚĆ
-// 1. Dodaj input gdzie bedzie mozna wpisac
-// id posta do pobrania i kliknac przycisk "Pobierz"
-
 import {useEffect, useState} from "react";
 
 type Post = {
@@ -21,7 +13,7 @@ const getAllPosts = async () => {
   return data as Post[]
 }
 
-const getPostById = async (id) => {
+const getPostById = async (id: number | undefined) => {
   const foundPost = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
   const data = await foundPost.json()
   return data as Post
@@ -62,7 +54,7 @@ const PostsView = () => {
         <input value={postID} onChange={(e) => {
           setPostId(parseInt(e.target.value))
         }
-        }/>
+        } type={'number'}/>
         <button onClick={handleClick}>Pobierz</button>
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">

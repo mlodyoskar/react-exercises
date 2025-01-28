@@ -51,11 +51,6 @@ export const Todo = () => {
                    deleteTask(task.id)
                }}>Delete</button>
            </li>))}
-       {/*    <li style={{ textDecoration: false ? "line-through" : "none" }}>
-     Wynieść śmieci
-     <button>{false ? "Undo" : "Complete"}</button>
-     <button>Delete</button>
-    </li>*/}
    </ul>
   </div>
  );
